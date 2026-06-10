@@ -1,0 +1,6 @@
+{
+  "name": "Ascend",
+  "description": "Anyone can claim success. Few can prove it. Build your reputation through verified achievements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

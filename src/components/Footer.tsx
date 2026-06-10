@@ -1,0 +1,30 @@
+import { Link } from 'react-router-dom';
+
+export function Footer() {
+  return (
+    <footer className="border-t border-white/10 bg-black py-12 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+        <div className="flex items-center space-x-2.5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-white">
+            <rect width="24" height="24" rx="7" fill="currentColor" />
+            <g transform="translate(4.5, 4.5) scale(0.625)">
+              <path fill="black" d="M11.134 2.19231C11.6698 1.88373 12.3302 1.88373 12.866 2.19231L20.2529 6.45293C20.789 6.76182 21.1202 7.33405 21.1202 7.95191V16.0481C21.1202 16.666 20.789 17.2382 20.2529 17.5471L12.866 21.8077C12.3302 22.1163 11.6698 22.1163 11.134 21.8077L3.74712 17.5471C3.21102 17.2382 2.87978 16.666 2.87978 16.0481V7.95191C2.87978 7.33405 3.21102 6.76182 3.74712 6.45293L11.134 2.19231Z" />
+            </g>
+          </svg>
+          <span className="text-white font-medium">Ascend Network</span>
+        </div>
+        
+        <div className="flex space-x-6 text-sm text-zinc-500">
+          <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+          <Link to="/terms" className="hover:text-white transition-colors">Terms</Link>
+          <Link to="/report" className="hover:text-white transition-colors">Report</Link>
+          <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
+        </div>
+        
+        <div className="text-sm text-zinc-600">
+          &copy; {new Date().getFullYear()} Ascend. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  );
+}
