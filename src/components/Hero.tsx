@@ -23,7 +23,7 @@ export function Hero() {
       <FadeIn delay={0.2} className="mt-12 flex flex-col items-center justify-center space-y-6 relative z-10 w-full">
         <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 w-full justify-center">
            <a  
-            href="/AscendNetwork-Setup.exe" 
+            href="https://github.com/YOUR_USERNAME/YOUR_REPO/releases/latest/download/AscendNetwork-Setup.exe" 
             download
             className="bg-[#f5f5f7] text-black px-8 py-4 rounded-full text-[17px] font-medium hover:bg-white transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:scale-[1.02] w-full sm:w-auto flex items-center justify-center cursor-pointer"
           >
