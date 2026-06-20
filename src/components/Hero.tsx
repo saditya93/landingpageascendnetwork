@@ -7,15 +7,7 @@ export function Hero() {
   return (
     <section className="relative pt-32 pb-20 px-6 md:px-12 flex flex-col items-center text-center overflow-hidden min-h-screen bg-black">
       
-      {/* Top Pill - Ultra minimal */}
-      <FadeIn className="relative z-10 w-full mt-10 flex justify-center mb-8">
-        <a href="#" className="inline-flex items-center space-x-2 transition-colors cursor-pointer text-[#86868b] hover:text-white">
-           <span className="font-medium text-xs tracking-widest uppercase">Ascend v2.0 is out</span>
-           <ChevronRight size={14} className="ml-1"/>
-        </a>
-      </FadeIn>
-
-      <FadeIn className="relative z-10 w-full max-w-6xl mx-auto">
+      <FadeIn className="relative z-10 w-full max-w-6xl mx-auto mt-20">
         <h1 className="text-[4rem] sm:text-[5rem] md:text-[6.5rem] lg:text-[7.5rem] font-medium tracking-tight leading-[1.05] text-[#f5f5f7]">
           The network<br className="hidden md:block" />
           built on proof.
@@ -33,13 +25,13 @@ export function Hero() {
            <a  
             href="/AscendNetwork-Setup.exe" 
             download
-            className="bg-[#f5f5f7] text-black px-8 py-4 rounded-full text-[17px] font-medium hover:bg-white transition-colors w-full sm:w-auto flex items-center justify-center cursor-pointer"
+            className="bg-[#f5f5f7] text-black px-8 py-4 rounded-full text-[17px] font-medium hover:bg-white transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:scale-[1.02] w-full sm:w-auto flex items-center justify-center cursor-pointer"
           >
             <span>Download for Windows</span>
           </a>
           <a  
-            href="#learn-more" 
-            className="text-[#f5f5f7] hover:text-white px-8 py-4 rounded-full text-[17px] font-medium transition-colors w-full sm:w-auto flex items-center justify-center cursor-pointer -tracking-wide"
+            href="#features" 
+            className="text-[#f5f5f7] bg-[#1d1d1f]/80 hover:bg-[#333336] backdrop-blur-md px-8 py-4 rounded-full text-[17px] font-medium transition-all hover:scale-[1.02] w-full sm:w-auto flex items-center justify-center cursor-pointer ring-1 ring-white/10"
           >
             <span>Learn more</span>
             <ChevronRight size={18} className="ml-1" />

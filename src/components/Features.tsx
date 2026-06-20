@@ -28,7 +28,7 @@ const features = [
 
 export function Features() {
   return (
-    <section id="learn-more" className="py-40 px-6 md:px-12 bg-black relative">
+    <section id="features" className="py-40 px-6 md:px-12 bg-black relative">
        <div className="max-w-[1200px] mx-auto">
          
          <div className="mb-24 text-center">

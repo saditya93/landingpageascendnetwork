@@ -16,7 +16,7 @@ export function Navbar() {
         <a  
           href="/AscendNetwork-Setup.exe" 
           download
-          className="bg-[#f5f5f7] text-black px-4 py-1.5 text-[13px] font-medium rounded-full hover:bg-white transition-colors"
+          className="bg-[#f5f5f7] text-black px-4 py-1.5 text-[13px] font-medium rounded-full hover:bg-white transition-all hover:scale-[1.05] hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
         >
           Download
         </a>
