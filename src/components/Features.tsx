@@ -1,45 +1,60 @@
 import React from 'react';
 import { FadeIn } from './ui/FadeIn';
 import { ShieldCheck, UserCheck, Briefcase, EyeOff } from 'lucide-react';
+import { motion } from 'motion/react';
 
 const features = [
   {
     title: 'Verified Achievements',
-    description: 'Every achievement requires proof before earning meaningful XP and reputation.',
+    description: 'Every achievement requires cryptographic or manual proof before earning meaningful XP and reputation across the network.',
     icon: ShieldCheck,
   },
   {
     title: 'Trust-Based Reputation',
-    description: 'Build credibility through consistency, achievements, and verified work.',
+    description: 'Build absolute credibility through consistency, peer-validated achievements, and an immutable work history.',
     icon: UserCheck,
   },
   {
     title: 'Opportunity Network',
-    description: 'Unlock internships, freelance projects, startup opportunities, and more.',
+    description: 'Unlock internships, exclusive freelance projects, and startup opportunities based purely on your proven capabilities.',
     icon: Briefcase,
   },
   {
-    title: 'Privacy First',
-    description: 'Users control profile visibility, activity visibility, and discovery settings.',
+    title: 'Privacy by Default',
+    description: 'Complete user control over profile visibility, activity streams, and algorithmic discovery parameters.',
     icon: EyeOff,
   },
 ];
 
 export function Features() {
   return (
-    <section className="py-32 px-6 md:px-12 bg-[#050505] relative">
-       <div className="max-w-6xl mx-auto">
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <section id="learn-more" className="py-40 px-6 md:px-12 bg-black relative">
+       <div className="max-w-[1200px] mx-auto">
+         
+         <div className="mb-24 text-center">
+           <FadeIn>
+             <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-[#f5f5f7] mb-6 leading-[1.05]">Built for those who execute.</h2>
+             <p className="text-[#86868b] text-2xl md:text-3xl font-normal max-w-4xl mx-auto leading-tight tracking-tight">The entire platform is engineered around absolute proof of work. Meaningful careers are built here.</p>
+           </FadeIn>
+         </div>
+
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {features.map((feature, i) => (
-              <React.Fragment key={i}>
-              <FadeIn delay={i * 0.1} className="flex flex-col space-y-5">
-                 <div className="w-12 h-12 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-white">
-                   <feature.icon strokeWidth={1.5} size={24} />
-                 </div>
-                 <h3 className="text-lg font-medium text-white">{feature.title}</h3>
-                 <p className="text-zinc-400 leading-relaxed text-sm">{feature.description}</p>
+              <FadeIn key={i} delay={i * 0.1}>
+                 <motion.div 
+                   whileHover={{ y: -8, scale: 1.02 }}
+                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                   className="h-full bg-black rounded-[2rem] p-10 md:p-14 border border-[#333336] overflow-hidden transition-colors hover:bg-[#111111]"
+                 >
+                   
+                   <div className="w-16 h-16 flex items-center justify-center text-[#f5f5f7] mb-8">
+                     <feature.icon strokeWidth={1} size={40} />
+                   </div>
+                   
+                   <h3 className="text-3xl font-medium text-[#f5f5f7] tracking-tight mb-4">{feature.title}</h3>
+                   <p className="text-[#86868b] leading-tight text-xl font-normal">{feature.description}</p>
+                 </motion.div>
               </FadeIn>
-              </React.Fragment>
             ))}
          </div>
        </div>

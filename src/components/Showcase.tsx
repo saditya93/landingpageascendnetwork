@@ -1,5 +1,5 @@
 import { FadeIn } from './ui/FadeIn';
-import { AppWindow } from './ui/AppWindow';
+import { motion } from 'motion/react';
 
 const showcases = [
   {
@@ -38,54 +38,62 @@ function MockupContent({ type }: { type: string }) {
   if (type === 'opportunities') src = '/opportuines.png';
 
   return (
-    <div className="w-full h-full relative bg-[#050505] flex items-center justify-center overflow-hidden">
+    <div className="w-full h-full relative flex items-start justify-center overflow-hidden bg-[#050505]">
       <img 
         src={src} 
         alt={`${type} Mockup`} 
-        className="w-full h-full object-cover object-left-top"
+        className="w-full h-auto object-top"
         onError={(e) => {
           e.currentTarget.style.display = 'none';
           e.currentTarget.parentElement!.innerHTML = `
-            <div class="flex flex-col items-center justify-center text-zinc-500 font-mono text-sm w-full h-full text-center px-4">
-              <svg class="w-8 h-8 mb-4 text-zinc-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            <div class="flex flex-col items-center justify-center text-[#86868b] font-medium text-sm w-full h-full text-center px-4 aspect-[4/3] bg-[#1d1d1f]">
               Upload ${src} to public/
             </div>
           `;
         }}
       />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
     </div>
   );
 }
 
 export function Showcase() {
   return (
-    <section className="py-32 py-40 px-6 md:px-12 bg-black border-t border-white/5 space-y-40">
-       <div className="text-center max-w-3xl mx-auto mb-20">
+    <section className="py-32 md:py-48 px-6 md:px-12 bg-black space-y-48">
+       <div className="text-center max-w-5xl mx-auto mb-32">
          <FadeIn>
-           <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6">Application Showcase</h2>
-           <p className="text-zinc-400 text-lg">A unified ecosystem where your reputation precedes you.</p>
+           <h2 className="text-5xl md:text-7xl font-medium tracking-tight mb-6 text-[#f5f5f7] leading-[1.05]">Application Showcase</h2>
+           <p className="text-[#86868b] text-2xl md:text-3xl font-normal leading-tight tracking-normal">A unified ecosystem where your reputation precedes you.</p>
          </FadeIn>
        </div>
 
+       <div className="space-y-40 md:space-y-56">
        {showcases.map((showcase, i) => (
-         <div key={i} className={`max-w-6xl mx-auto flex flex-col ${i % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-16`}>
-           <div className={`lg:w-1/3 space-y-6 ${i % 2 === 1 ? 'lg:pl-16' : 'lg:pr-16'}`}>
+         <div key={i} className={`max-w-[1200px] mx-auto flex flex-col ${i % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-16 md:gap-24`}>
+           <div className={`lg:w-1/3 flex flex-col space-y-6 ${i % 2 === 1 ? 'lg:pl-8' : 'lg:pr-8'}`}>
              <FadeIn>
-                <div className="text-zinc-500 font-medium tracking-widest text-sm uppercase mb-4">Module {i + 1}</div>
-                <h3 className="text-3xl md:text-4xl font-medium text-white tracking-tight">{showcase.title}</h3>
-                <p className="mt-4 text-zinc-400 text-lg leading-relaxed">{showcase.description}</p>
+                <div className="text-[#86868b] font-medium text-sm tracking-widest uppercase mb-4">{showcase.title}</div>
+                <h3 className="text-[2.5rem] md:text-[3.5rem] font-medium text-[#f5f5f7] tracking-tight leading-tight mb-6">{showcase.title}</h3>
+                <p className="text-[#86868b] text-xl leading-tight font-normal">{showcase.description}</p>
              </FadeIn>
            </div>
            
            <div className="lg:w-2/3 w-full">
-             <FadeIn delay={0.2}>
-               <AppWindow className="aspect-[4/3] md:aspect-[16/10]" hideSidebar={true}>
-                 <MockupContent type={showcase.mockupType} />
-               </AppWindow>
+             <FadeIn delay={0.1}>
+               <motion.div 
+                 whileHover={{ y: -10, scale: 1.01 }}
+                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                 className="relative rounded-[2rem] overflow-hidden bg-black ring-1 ring-[#333336]"
+               >
+                   <div className="w-full relative flex items-start justify-center bg-black">
+                     <MockupContent type={showcase.mockupType} />
+                   </div>
+               </motion.div>
              </FadeIn>
            </div>
          </div>
        ))}
+       </div>
     </section>
   );
 }
