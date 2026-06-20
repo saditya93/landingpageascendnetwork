@@ -14,7 +14,7 @@ export function Navbar() {
 
       <div className="flex items-center space-x-4">
         <a  
-          href="https://github.com/YOUR_USERNAME/YOUR_REPO/releases/latest/download/AscendNetwork-Setup.exe" 
+          href="https://github.com/saditya93/landingpageascendnetwork/releases/download/v0/AscendNetwork.exe" 
           download
           className="bg-[#f5f5f7] text-black px-4 py-1.5 text-[13px] font-medium rounded-full hover:bg-white transition-all hover:scale-[1.05] hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
         >
